@@ -1,9 +1,8 @@
 {
   "name": "sharer",
   "version": "1.0.0",
-  "description": "Sharer Desktop App",
   "main": "main.js",
-  "author": "jbjb",
+  "private": true,
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
@@ -11,15 +10,20 @@
   "build": {
     "appId": "kr.jbjb.sharer",
     "productName": "Sharer",
+    "files": [
+      "main.js",
+      "package.json"
+    ],
     "mac": {
-      "target": [
-        "dmg"
-      ],
-      "category": "public.app-category.utilities"
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
     }
   },
   "devDependencies": {
-    "electron": "30.0.9",
-    "electron-builder": "^26.0.12"
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
   }
 }
+
